@@ -28,7 +28,7 @@ public class FileUtil {
             bufferedReader.close();
             fileInputStream.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("读取出错");
         }
         return str;
     }
@@ -37,26 +37,31 @@ public class FileUtil {
      * 写入文件
      * 传入内容、文件全路径名，将内容写入文件并换行
      *
-     * @param txtElem 传入的内容
+     * @param txt 传入的内容
      * @param txtPath 写入的文件路径
      */
-    public static void writeFile(double txtElem, String txtPath) {
-        String str = Double.toString(txtElem);
+    public static void writeFile(String txt, String txtPath) {
         File file = new File(txtPath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file, true);
-            fileWriter.write(str, 0, str.length());
+            fileWriter.write(txt, 0, txt.length());
             fileWriter.write("\r\n");
             // 关闭资源
             fileWriter.close();
+            System.out.println("已将结果写入《"+fileName(txtPath)+"》文件中");
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("写入出错");
         }
     }
 
+    /**
+     * 获取该文件的文件名
+     *
+     * @param txtPath
+     * @return 文件名
+     */
     public static String fileName(String txtPath){
-        // 将文件按行读入 str中
         File file = new File(txtPath);
 
         return file.getName();

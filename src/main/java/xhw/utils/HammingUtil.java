@@ -11,16 +11,22 @@ public class HammingUtil {
      * @return 海明距离
      */
     public static int getHammingDistance(String simHash1, String simHash2) {
+
+        //前者小于后者重新调用此方法
+        if (simHash1.length() < simHash2.length()) {
+            return getHammingDistance(simHash2,simHash1);
+        }
+
+        // 不相等则高位补0
+        while(simHash1.length() > simHash2.length()){
+            simHash2 = "0" + simHash2;
+        }
+
         int distance = 0;
-        if (simHash1.length() != simHash2.length()) {
-            // 不相等则返回-1
-            distance = -1;
-        } else {
-            for (int i = 0; i < simHash1.length(); i++) {
-                // 每一位进行比较
-                if (simHash1.charAt(i) != simHash2.charAt(i)) {
-                    distance++;
-                }
+        for (int i = 0; i < simHash1.length(); i++) {
+            // 每一位进行比较
+            if (simHash1.charAt(i) != simHash2.charAt(i)) {
+                distance++;
             }
         }
         return distance;
