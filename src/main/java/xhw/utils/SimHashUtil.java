@@ -2,6 +2,7 @@ package xhw.utils;
 
 import com.hankcs.hanlp.HanLP;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -45,6 +46,10 @@ public class SimHashUtil {
      * @return 返回text的simHash值
      */
     public static String getSimHash(String text) {
+        if(text.equals("")){
+            throw new Error("文章无内容");
+        }
+
 
         // 用数组表示特征向量,取64位,从 0 1 2 位开始表示从高位到低位
         int[] v = new int[hashbit];

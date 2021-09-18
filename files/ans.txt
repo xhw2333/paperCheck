@@ -1,1 +1,5 @@
-《orig.txt》文章与《orig_0.8_add.txt》文章相似度为：0.91
+《orig.txt》文章与《orig_0.8_add.txt》文章相似度为：0.82
+《orig.txt》文章与《orig_0.8_del.txt》文章相似度为：0.86
+《orig.txt》文章与《orig_0.8_dis_1.txt》文章相似度为：0.94
+《orig.txt》文章与《orig_0.8_dis_10.txt》文章相似度为：0.69
+《orig.txt》文章与《orig_0.8_dis_15.txt》文章相似度为：0.77

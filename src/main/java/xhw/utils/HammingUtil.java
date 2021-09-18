@@ -44,7 +44,7 @@ public class HammingUtil {
         int distance = getHammingDistance(simHash1, simHash2);
         // 通过海明距离计算出相似度，并返回(保留两位小数)
         DecimalFormat format = new DecimalFormat("#.00");
-        String similarity = format.format(0.01 * (100 - distance * 100 / 128));
+        String similarity = format.format(0.01 * (100 - distance * 100 / 64));
         return Double.parseDouble(similarity);
     }
 }

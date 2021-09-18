@@ -1,7 +1,6 @@
 package xhw.utils;
 
 import org.junit.Test;
-import xhw.utils.HammingUtil;
 
 public class HammingUtilTest {
 
